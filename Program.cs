@@ -112,7 +112,7 @@ using (var scope = app.Services.CreateScope())
             Console.WriteLine($"   - {migration}");
         }
 
-        await db.Database.MigrateAsync();
+        await db.Database.EnsureCreatedAsync();
         Console.WriteLine(" Migrations completed successfully");
 
         // Verify tables exist
